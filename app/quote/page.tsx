@@ -1,18 +1,33 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Send, CheckCircle, AlertCircle } from "lucide-react"
+import { initEmailJS, sendEmail } from "../../lib/emailjs"
+
+// Define the form data type
+interface FormData {
+  name: string
+  email: string
+  company: string
+  phone: string
+  industry: string
+  services: string[]  // Explicitly type as string[]
+  budget: string
+  timeline: string
+  description: string
+  currentMarketing: string
+  goals: string
+}
 
 export default function QuotePage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     company: "",
     phone: "",
     industry: "",
-    services: [],
+    services: [] as string[], // Explicitly cast as string[]
     budget: "",
     timeline: "",
     description: "",
@@ -22,6 +37,11 @@ export default function QuotePage() {
 
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
   const [message, setMessage] = useState("")
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initEmailJS()
+  }, [])
 
   const services = [
     "Social Media Management",
@@ -61,58 +81,53 @@ export default function QuotePage() {
     setStatus("sending")
 
     try {
-      // Create email content
-      const emailContent = `
-New Quote Request from ASK Innovate Website
+      // Prepare email template parameters
+      const templateParams = {
+        to_email: "info@askinnovate.co.za",
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        industry: formData.industry,
+        services: formData.services.join(", "),
+        budget: formData.budget,
+        timeline: formData.timeline,
+        description: formData.description,
+        current_marketing: formData.currentMarketing,
+        goals: formData.goals,
+        subject: `New Quote Request from ${formData.name} - ${formData.company}`,
+      }
 
-Contact Information:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Company: ${formData.company}
-- Phone: ${formData.phone}
-- Industry: ${formData.industry}
+      const result = await sendEmail(templateParams)
 
-Project Details:
-- Services Requested: ${formData.services.join(", ")}
-- Budget Range: ${formData.budget}
-- Timeline: ${formData.timeline}
+      if (result.success) {
+        setStatus("success")
+        setMessage(
+          "Thank you! Your quote request has been submitted successfully. We'll get back to you within 24 hours.",
+        )
 
-Project Description:
-${formData.description}
-
-Current Marketing Efforts:
-${formData.currentMarketing}
-
-Goals & Objectives:
-${formData.goals}
-      `
-
-      // For demo purposes, we'll simulate sending an email
-      // In a real application, you would integrate with EmailJS or similar service
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-
-      setStatus("success")
-      setMessage(
-        "Thank you! Your quote request has been submitted successfully. We'll get back to you within 24 hours.",
-      )
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        industry: "",
-        services: [],
-        budget: "",
-        timeline: "",
-        description: "",
-        currentMarketing: "",
-        goals: "",
-      })
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          industry: "",
+          services: [] as string[], // Explicitly cast on reset too
+          budget: "",
+          timeline: "",
+          description: "",
+          currentMarketing: "",
+          goals: "",
+        })
+      } else {
+        throw new Error("Failed to send email")
+      }
     } catch (error) {
       setStatus("error")
-      setMessage("Sorry, there was an error submitting your request. Please try again or contact us directly.")
+      setMessage(
+        "Sorry, there was an error submitting your request. Please try again or contact us directly at info@askinnovate.co.za",
+      )
     }
   }
 
