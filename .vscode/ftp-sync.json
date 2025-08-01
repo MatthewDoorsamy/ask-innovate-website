@@ -1,0 +1,29 @@
+{
+    "remotePath": "/httpdocs/",
+    "host": "41.0.5.128",
+    "username": "askinnovate.co.za",
+    "password": "DaoliaNy2",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "node_modules/**",
+        ".vscode/**",
+        ".git/**",
+        "README.md",
+        ".gitignore",
+        "*.log",
+        ".env*"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}

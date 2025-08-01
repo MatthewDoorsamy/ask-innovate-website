@@ -21,7 +21,14 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <Image src="/ask-logo-blue.png" alt="ASK Innovate" width={120} height={40} className="h-10 w-auto" />
+              <Image
+                src="/ask-logo-blue.png"
+                alt="ASK Innovate"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+                style={{ width: "auto", height: "40px" }}
+              />
             </Link>
           </div>
 
