@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   title: "ASK Innovate - You ASK, We Innovate",
   description:
     "Forward-thinking marketing agency specializing in creative strategies and data-driven insights for sustainable business growth.",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: [
+      { url: '/ask-logo-blue.png', sizes: 'any', type: 'image/png' },
+      { url: '/ask-logo-blue.png', sizes: '32x32', type: 'image/png' },
+      { url: '/ask-logo-blue.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/ask-logo-blue.png',
+  },
 }
 
 export default function RootLayout({

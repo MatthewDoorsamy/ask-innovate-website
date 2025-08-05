@@ -375,6 +375,7 @@ export default function QuotePage() {
                   <div>
                     <label htmlFor="currentMarketing" className="block text-sm font-medium text-gray-700 mb-2">
                       Current Marketing Efforts
+                      <span className="text-gray-500 text-sm ml-1">(Optional)</span>
                     </label>
                     <textarea
                       id="currentMarketing"

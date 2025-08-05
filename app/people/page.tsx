@@ -43,7 +43,7 @@ export default function PeoplePage() {
       email: "kishanh@askinnovate.co.za",
       linkedin: "https://www.linkedin.com/in/kishan-hargovan-b54685216/",
       description:
-        "Kishan holds a BCom (Honours) in Marketing Management from the University of Pretoria. His background comprises of experience across several industries, resulting in invaluable business acumen. He specializes in developing tailored marketing solutions that align with client goals and market trends. Kishan focuses on client service excellence, striving to deliver exceptional and professional services to ASK Innovate's clients.",
+        "Kishan holds a BCom (Honours) in Marketing Management from the University of Pretoria. His background comprises of experience across several industries, resulting in invaluable business acumen. He specialises in developing tailored marketing solutions that align with client goals and market trends. Kishan focuses on client service excellence, striving to deliver exceptional and professional services to ASK Innovate's clients.",
       image: "/Kishan.jpeg?height=300&width=300",
     },
   ]
