@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description:
     "Forward-thinking marketing agency specializing in creative strategies and data-driven insights for sustainable business growth.",
   generator: 'v0.dev',
+  verification: {
+    google: 'google0d86128d275ce6d9',
+  },
   icons: {
     icon: [
       { url: '/ask-logo-blue.png', sizes: 'any', type: 'image/png' },
