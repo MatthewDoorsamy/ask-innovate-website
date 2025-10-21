@@ -52,6 +52,7 @@ export default function QuotePage() {
     "Promotional Strategy Development",
     "Marketing Activations",
     "Web Development",
+    "Email Marketing",
     "Other",
   ]
 

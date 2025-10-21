@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Target, Users, TrendingUp, Lightbulb, BarChart, Code } from "lucide-react"
+import { ArrowRight, Target, Users, TrendingUp, Lightbulb, BarChart, Code, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useEngagementPopup } from "../hooks/useEngagementPopup"
@@ -82,6 +82,11 @@ export default function Home() {
       icon: <Code className="h-8 w-8" />,
       title: "Web Development",
       description: "Modern, responsive websites and web applications that drive engagement and conversions.",
+    },
+    {
+      icon: <Mail className="h-8 w-8" />,
+      title: "Email Marketing",
+      description: "Targeted email campaigns designed to nurture leads, strengthen customer relationships, and drive measurable conversions.",
     },
   ]
 
