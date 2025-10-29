@@ -168,7 +168,7 @@ export default function ClientsPage() {
             Let's discuss how we can help your business achieve similar remarkable results
           </p>
           <a
-            href="/quote"
+            href="/quote/"
             className="inline-flex items-center bg-white text-blue-900 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base w-full sm:w-auto justify-center max-w-xs mx-auto sm:max-w-none"
           >
             Start Your Success Story
