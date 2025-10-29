@@ -40,7 +40,7 @@ export default function ClientsPage() {
         "With more than five decades serving the Sub-Saharan electronics and communications industries, Accutronics has assisted industry-leading clients in Satellite, RF & Microwave, EMF Safety and Testing, Space research, and Aerospace & defense.",
       partnership:
         "ASK Innovate has been a crucial aid to Accutronics in assisting with creating and managing their LinkedIn profile. ASK Innovate have helped to create a presence for Accutronics' suppliers and successfully promoted manufacturing partners' products to clients.",
-      image: "/accutronics-logo.png",
+      image: "/Accutronics_Client.png",
       industry: "Electrical",
     },
   ]

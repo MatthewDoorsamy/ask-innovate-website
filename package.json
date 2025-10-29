@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node app.js",
+    "deploy": "npm run build && node deploy.js",
     "lint": "next lint"
   },
   "dependencies": {
